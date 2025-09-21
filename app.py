@@ -4,7 +4,7 @@ from flask_cors import CORS
 import os
 
 # Serve React build folder as static
-app = Flask(__name__, static_folder="frontend/build", static_url_path="/")
+app = Flask(__name__)
 CORS(app)
 
 # Update these values with your actual MySQL credentials
