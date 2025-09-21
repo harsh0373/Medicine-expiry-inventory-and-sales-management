@@ -406,4 +406,8 @@ if __name__ == "__main__":
     with app.app_context():
         db.create_all()  # This creates the table if it doesn't exist
     port = int(os.environ.get("PORT",5000))
+<<<<<<< HEAD
     app.run(host="0.0.0.0",port=port)
+=======
+    app.run(host="0.0.0.0",port=port)
+>>>>>>> b21f8919fe55d480f48785ff41d4b4892049ca86
