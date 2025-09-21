@@ -4,7 +4,7 @@ from flask_cors import CORS
 import os
 
 # Serve React build folder as static
-app = Flask(_name_, static_folder="frontend/build", static_url_path="/")
+app = Flask(__name__, static_folder="frontend/build", static_url_path="/")
 CORS(app)
 
 # Update these values with your actual MySQL credentials
@@ -81,7 +81,7 @@ def serve_react(path):
         return send_from_directory(app.static_folder, "index.html")
 
 # --------------------- MAIN ---------------------
-if _name_ == "_main_":
+if __name__ == "__main__":
     with app.app_context():
         db.create_all()  # Create tables if not exist
     port = int(os.environ.get("PORT", 5000))
