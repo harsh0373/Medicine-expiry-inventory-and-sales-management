@@ -4,7 +4,7 @@ from flask_cors import CORS
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app , resources={r"/*": {"origins": "https://med-app-frontend-five.vercel.app"}})
 
 # Update these values with your actual MySQL credentials
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:password@localhost/med_app_db'
