@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app , resources={r"/*": {"origins": "https://med-app-frontend-five.vercel.app"}})
 
 # Update these values with your actual MySQL credentials
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:GichNtjpbvBKMhtlnBiGWNymNSUEyOfS@maglev.proxy.rlwy.net:39708/railway"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:password@localhost/med_app_db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -134,7 +134,7 @@ def get_available_meds():
 from datetime import date
 
 class MedSales(db.Model):
-    __tablename__ = 'med_sale'
+    __tablename__ = 'med_sales'
     saleid = db.Column(db.Integer, primary_key=True)
     expiryid = db.Column(db.Integer, db.ForeignKey('med_stock.expiry_id'), nullable=False)
     medname = db.Column(db.String(100), nullable=False)
